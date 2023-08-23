@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/30bc57426b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!----------------portfolio------------------->
+    <div id="portfolio">
+        <div class="container">
+            <!-- <h1 class="sub-title">My Work</h1> -->
+            <div class="work-list">
+                <div class="work">
+                    <img src="image/images/work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, possimus dolor quae laborum minus expedita assumenda porro, beatae repudiandae cum molestiae facilis. Repellendus ipsa numquam cumque at omnis temporibus dolorem?</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/images/download-spotify.png">
+                    <div class="layer">
+                        <h3>Web Music App-Spotify Clone</h3>
+                        <p> Unveiling my creation, "SpotiClone" – an HTML, CSS, and JavaScript homage to the iconic Spotify interface. Seamlessly crafted to replicate the music streaming experience, it offers dynamic playlists and interactive controls. Immerse yourself in a familiar yet unique sonic journey, designed from scratch with a touch of coding magic.</p>
+                        <a href="https://whosinghajay.github.io/spotify-basicClone/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/images/yt.jpg">
+                    <div class="layer">
+                        <h3>Moosetube-A Youtube Clone</h3>
+                        <p>Introducing "Moosetube," my creative rendition of a YouTube clone crafted solely with HTML and CSS. Aiming for simplicity, I've designed an immersive video-sharing platform that captures the essence of online content sharing. Explore and experience the nostalgia of video browsing in this minimalist homage to the world of online videos.</p>
+                        <a href="https://whosinghajay.github.io/moosetube/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/images/todo-2103511_1280.webp">
+                    <div class="layer">
+                        <h3>To-Do List Webapp</h3>
+                        <p>Presenting my "TaskMinder" – a feature-rich to-do list built exclusively with HTML, CSS, and JavaScript. Seamlessly managing tasks, it offers dynamic list updates, priority settings, and responsive design. Experience streamlined organization and productivity, elegantly coded from scratch. Stay on top of your tasks effortlessly with this intuitive creation.</p>
+                        <a href="https://whosinghajay.github.io/todo-list/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/images/rock-paper-scissors-game-white-29735309.jpg">
+                    <div class="layer">
+                        <h3>Rock Paper Scissor Game</h3>
+                        <p> Introducing "RPSArena" – my rendition of the classic rock-paper-scissors game brought to life with HTML, CSS, and JavaScript. Engage in strategic battles, experience fluid animations, and challenge your decision-making skills. Immerse yourself in a digital arena where timeless gameplay meets modern coding creativity.</p>
+                        <a href="https://whosinghajay.github.io/rockpaperscissorGame/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/images/textutils.png">
+                    <div class="layer">
+                        <h3>Textutils-ReactApp</h3>
+                        <p>I've developed a text analysis app, TextUtils, using ReactJS. It empowers users to manipulate text in various ways, such as converting to uppercase/lowercase and displaying word and character counts. The app incorporates Bootstrap for styling and React Router for navigation, making it user-friendly and efficient for text processing.</p>
+                        <a href="https://whosinghajay.github.io/textutils/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname,event){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-links");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemeu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemeu.style.right="0";
+        }
+        function closemenu(){
+            sidemeu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzOPZYExd9z6XPXzVN3TklW7YqiUG-bZnJ4NuEaSr6ME_Vh2Xe0rcO1WJXzalacuQlpHw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Form Submitted!"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
